@@ -1,3 +1,7 @@
+require "uri"
+require "json"
+require "net/http"
+
 class InterfaceController < ApplicationController
  
   def input
@@ -18,12 +22,6 @@ class InterfaceController < ApplicationController
     #sundesh me API (xrhsh postman gia na ktalabeis ti thelei!)
  
     if @subscriber.save
-     
-      
-      require "uri"
-      require "json"
-      require "net/http"
-
       url = URI("https://hooks.slack.com/services/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")
 
       https = Net::HTTP.new(url.host, url.port)
