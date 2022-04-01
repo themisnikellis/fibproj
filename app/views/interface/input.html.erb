@@ -1,0 +1,109 @@
+<style>
+body {
+  background-image: url('https://images.unsplash.com/photo-1643447193011-21b91abde7e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGpwZyUyMHRlbGVjb21tdW5vY2F0aW9uc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60');
+}
+</style>
+</head>
+<body>
+
+
+
+
+  <div class="hero-text">
+    <h1 style="font-size:50px">We are fibair</h1>
+    
+    <a href="http://localhost:3000/interface/help" target="_blank" > <button>Contact us</button> </a>
+  </div>
+
+
+
+</div>    
+    
+    
+    
+    <div class="d-flex align-items-center justify-content-center">
+    
+        <strong><em><h3>Παρακαλώ συμπληρώστε τα στοιχεία σας</h3></em></strong>
+        <br><br>
+    </div>
+    
+    <div class="d-flex align-items-center justify-content-center">
+  </div>
+<!To parakatw form thes allagh wste xrhsh ERB kai oxi HTML>
+<!to krataw se sxolia gt einai etoimo form gia site apla kathara html!>
+     <!-- <form action="/interface" method="POST" >
+    <label for="fname">Ονοματεπώνυμο:</label><br>
+    <input type="text" id="fname" name="fname" value="" required><br><br>
+
+    <label for="lname">Εmail:</label><br>
+    <input type="text" id="lname" name="email" value="" required><br><br>
+
+    <label for="lname">Τηλέφωνο επικοινωνίας:</label><br>
+    <input type="text" id="lname" name="contact_num" value="" required><br><br>
+
+    <label for="lname">Διεύθυνση κατοικίας ενδιαφέροντος:</label><br>
+    <input type="text" id="lname" name="address" value="" required><br><br>
+  
+    <label for="lname">ΑΦΜ:</label><br>
+    <input type="text" id="lname" name="vatno" value="" required><br><br>
+
+    <label for="lname">ΔΟΥ:</label><br>
+    <input type="text" id="lname" name="taxoffice" value="" required><br><br>
+
+    <input type="submit" value="Submit">
+  </form> -->
+
+
+<%= form_with model: @subscriber do |x| %>
+  <div>
+    <%= x.label :Ονοματεπώνυμο %><br>
+    <%= x.text_field :fname %>
+  </div>
+
+  <div>
+    <%= x.label :email %><br>
+    <%= x.text_field :email %>
+  </div>
+
+  <div>
+    <%= x.label "Τηλέφωνο Επικοινωνίας" %><br>
+    <%= x.text_field :contact_num %>
+  </div>
+
+  <div>
+    <%= x.label "Διεύθυνση κατοικίας" %><br>
+    <%= x.text_field :address %>
+  </div>
+
+  <div>
+    <%= x.label :ΑΦΜ %><br>
+    <%= x.text_field :vatno %>
+  </div>
+
+  <div>
+    <%= x.label :ΔΟΥ %><br>
+    <%= x.text_field :taxoffice %>
+  </div>
+
+  <div>
+    <%= x.submit %>
+  </div>
+<% end %>
+
+
+
+
+
+<h1>Ονόματα άλλων συνδρομητών</h1>
+
+<ul>
+  <% @subscribers.each do |x| %>
+    <li>
+      <%= x.name %>
+      <%= x.email %>
+      <%= x.contact_num %>
+    </li>
+  <% end %>
+</ul>
+
+
